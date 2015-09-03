@@ -49,7 +49,7 @@ containers:
   jira:
     image: atende/jira
     run:
-      env: ["VIRTUAL_HOST=project.company.com","PROXY_SCHEME=https","PROXY_PORT=443","PROXY_SECURED=true"]
+      env: ["VIRTUAL_HOST=jira.peerpont.com"]
       volumes-from: ["jira_home"]
       publish: ["8080:8080"]
       link: ["postgresql:db"]
@@ -57,7 +57,7 @@ containers:
   confluence:
     image: atende/confluence
     run:
-      env: ["VIRTUAL_HOST=wiki.company.com","PROXY_SCHEME=https","PROXY_PORT=443","PROXY_SECURED=true"]
+      env: ["VIRTUAL_HOST=wiki.peerpont.com"]
       volumes-from: ["confluence_home"]
       publish: ["8090:8090"]
       link: ["postgresql:db"]
@@ -65,7 +65,7 @@ containers:
   stash:
     image: atende/stash
     run:
-      env: ["VIRTUAL_HOST=code.company.com","PROXY_SCHEME=https","PROXY_PORT=443","PROXY_SECURED=true"]
+      env: ["VIRTUAL_HOST=stash.peerpont.com"]
       volumes-from: ["stash_home"]
       publish: ["7990:7990"]
       link: ["postgresql:db"]
@@ -73,7 +73,7 @@ containers:
   crowd:
     image: atende/crowd
     run:
-      env: ["VIRTUAL_HOST=auth.company.com","PROXY_SCHEME=https","PROXY_PORT=443","PROXY_SECURED=true"]
+      env: ["VIRTUAL_HOST=auth.peerpont.com"]
       volumes-from: ["crowd_home"]
       publish: ["8095:8095"]
       link: ["postgresql:db"]
@@ -81,7 +81,7 @@ containers:
   bamboo:
     image: atende/bamboo
     run:
-      env: ["VIRTUAL_HOST=build.company.com","PROXY_SCHEME=https","PROXY_PORT=443","PROXY_SECURED=true"]
+      env: ["VIRTUAL_HOST=build.peerpont.com"]
       volumes-from: ["bamboo_home"]
       publish: ["8085:8085"]
       link: ["postgresql:db"]
