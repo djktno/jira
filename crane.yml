@@ -6,7 +6,7 @@ containers:
       cmd: ["echo","'pgsql data'"]
       detach: true
   postgresql:
-    image: atende/postgresql:9.4
+    image: djktno/postgresql:9.3
     run:
       volumes-from: ["pgsql_datastore"]
       detach: true
